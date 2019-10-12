@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<div class="container">
+  <h1 style="margin-left:400px;">Here you can sign up</h1>
+
+</div>
+{% for message in messages%}
+    <h3 class="text-center font-weight-bold text-danger pt-3">{{message}}</h3>
+{% endfor %}
+<div class="container">
+  <div class="jumbotron">
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="username" class="form-control"><br>
+      <input type="email" name="email" placeholder="Email" class="form-control"><br>
+      <input type="text" name="f_name" placeholder="First_name" class="form-control"><br>
+      <input type="text" name="l_name" placeholder="Last_name" class="form-control"><br>
+      <input type="password" name="pwd" placeholder="password" class="form-control"><br><br>
+      <input type="submit" value="Signup" class="btn btn-success" style="margin-left:500px;">
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
